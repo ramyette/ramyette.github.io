@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fadeIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #007acc;
+  font-size: 1.2rem;
+}
+
+.logo-text span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logo-text:hover span {
+  animation: bounce 0.6s ease forwards;
+}
+
+.logo-text:hover span:nth-child(1) { animation-delay: 0s; }
+.logo-text:hover span:nth-child(2) { animation-delay: 0.05s; }
+.logo-text:hover span:nth-child(3) { animation-delay: 0.1s; }
+.logo-text:hover span:nth-child(4) { animation-delay: 0.15s; }
+.logo-text:hover span:nth-child(5) { animation-delay: 0.2s; }
+.logo-text:hover span:nth-child(6) { animation-delay: 0.25s; }
+.logo-text:hover span:nth-child(7) { animation-delay: 0.3s; }
+.logo-text:hover span:nth-child(8) { animation-delay: 0.35s; }
+.logo-text:hover span:nth-child(9) { animation-delay: 0.4s; }
+.logo-text:hover span:nth-child(10){ animation-delay: 0.45s; }
+.logo-text:hover span:nth-child(11){ animation-delay: 0.5s; }
+.logo-text:hover span:nth-child(12){ animation-delay: 0.55s; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #007acc;
+}
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #007acc;
+  text-align: center;
+}
+
+main p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.profile-pic {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.profile-pic img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+  transform: scale(1.05);
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #005fa3;
+}
+
+a:visited {
+  color: #007acc;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.project-card {
+  background: #ffffff;
+  color: #222;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center; /* centers the title and button */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card h2 {
+  margin-bottom: 1rem;
+  color: #007acc;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.project-card .btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #007acc;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.project-card .btn:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00ffcc;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffcc;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.project-card h2 {
+  margin-bottom: 0.5rem;
+  color: #007acc;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
