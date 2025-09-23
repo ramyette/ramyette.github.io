@@ -105,11 +105,15 @@ main p {
   text-align: center;
 }
 
-.profile-pic {
+/* Intro Section */
+.intro {
   text-align: center;
-  margin: 1rem 0;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
+/* Profile Picture */
 .profile-pic img {
   width: 180px;
   height: 180px;
@@ -121,6 +125,53 @@ main p {
 
 .profile-pic img:hover {
   transform: scale(1.05);
+}
+
+/* Headings and Paragraphs */
+.intro h1 {
+  font-size: 2.2rem;
+  color: #007acc;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets / Medium Screens */
+@media (max-width: 768px) {
+  .profile-pic img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile / Small Screens */
+@media (max-width: 480px) {
+  .profile-pic img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+  }
 }
 
 a {
@@ -137,6 +188,7 @@ a:visited {
   color: #007acc;
 }
 
+/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -144,8 +196,10 @@ a:visited {
   justify-items: center;
   max-width: 1200px;
   margin: 2rem auto;
+  padding: 0 1rem; /* adds padding for small screens */
 }
 
+/* Project Card */
 .project-card {
   background: #ffffff;
   color: #222;
@@ -153,7 +207,7 @@ a:visited {
   border-radius: 10px;
   width: 100%;
   max-width: 350px;
-  text-align: center; /* centers the title and button */
+  text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -164,6 +218,7 @@ a:visited {
 .project-card h2 {
   margin-bottom: 1rem;
   color: #007acc;
+  font-size: 1.5rem; /* slightly smaller for mobile scaling */
 }
 
 .project-card p {
@@ -186,6 +241,58 @@ a:visited {
 .project-card .btn:hover {
   background: #005fa3;
   transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+
+/* Tablets / Medium Screens */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* stack cards vertically */
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    max-width: 100%; /* allow cards to use full width */
+    padding: 1.8rem;
+  }
+
+  .project-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  .project-card .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Mobile / Small Screens */
+@media (max-width: 480px) {
+  .projects-grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+
+  .project-card .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+  }
 }
 
 .nav-links a {
