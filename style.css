@@ -174,7 +174,7 @@ a {
 }
 
 a:hover {
-  color: #005fa3;
+  color: #148160;
 }
 
 a:visited {
@@ -342,4 +342,25 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.changelog ul {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem 0;
+}
+
+.changelog ul ul {
+  list-style-type: circle;
+  padding-left: 1.75rem;
+  margin-top: 0.25rem;
+}
+
+.changelog {
+  background: #ffffff;
+  color: #222;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
