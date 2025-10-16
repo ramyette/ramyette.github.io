@@ -37,7 +37,7 @@ header {
 .logo {
   font-weight: bold;
   text-decoration: none;
-  color: #007acc;
+  color: #148160;
   font-size: 1.2rem;
 }
 
@@ -82,7 +82,7 @@ header {
 
 .navbar a:hover,
 .navbar a.active {
-  color: #007acc;
+  color: #148160;
 }
 
 main {
@@ -95,7 +95,7 @@ main {
 main h1 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: #007acc;
+  color: #148160;
   text-align: center;
 }
 
@@ -127,7 +127,7 @@ main p {
 
 .intro h1 {
   font-size: 2.2rem;
-  color: #007acc;
+  color: #148160;
   margin-bottom: 1rem;
 }
 
@@ -168,7 +168,7 @@ main p {
 }
 
 a {
-  color: #007acc;
+  color: #148160;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -178,7 +178,7 @@ a:hover {
 }
 
 a:visited {
-  color: #007acc;
+  color: #148160;
 }
 
 .projects-grid {
@@ -208,7 +208,7 @@ a:visited {
 
 .project-card h2 {
   margin-bottom: 1rem;
-  color: #007acc;
+  color: #148160;
   font-size: 1.5rem; 
 }
 
@@ -221,7 +221,7 @@ a:visited {
 .project-card .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background: #007acc;
+  background: #148160;
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
@@ -230,7 +230,7 @@ a:visited {
 }
 
 .project-card .btn:hover {
-  background: #005fa3;
+  background: #0f6349;
   transform: translateY(-2px);
 }
 
@@ -308,7 +308,7 @@ a:visited {
 
 .project-card h2 {
   margin-bottom: 0.5rem;
-  color: #007acc;
+  color: #148160;
 }
 
 .project-card p {
@@ -336,7 +336,7 @@ footer {
 }
 
 footer a {
-  color: #007acc;
+  color: #148160;
   text-decoration: none;
 }
 
