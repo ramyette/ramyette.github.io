@@ -121,10 +121,6 @@ main p {
   transition: transform 0.3s ease;
 }
 
-.profile-pic img:hover {
-  transform: scale(1.05);
-}
-
 .intro h1 {
   font-size: 2.2rem;
   color: #148160;
