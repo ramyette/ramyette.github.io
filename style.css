@@ -199,7 +199,7 @@ main p {
 /* projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
   gap: 2rem;
   justify-items: center;
   max-width: 1200px;
@@ -252,6 +252,11 @@ main p {
 .btn:hover {
   background: #0f6349;
   transform: translateY(-2px);
+}
+
+.coming-soon {
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 /* mobile adjustments */

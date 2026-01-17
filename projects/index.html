@@ -28,16 +28,30 @@
   <main>
     <section class="projects">
       <h1>Projects</h1>
+      <!--
       <p>Some of my projects are locked, which can be accessed on
         <a href="https://www.patreon.com/ramyette" target="_blank"><img src="/images/patreon.png" width="12" /> Patreon</a>
       </p>
+      -->
       <div class="projects-grid">
         <div class="project-card">
           <h2>Arpeggio</h2>
           <p>A JavaFX application for composing, playing, and sharing drumset music.</p>
           <a href="https://github.com/sebastianboscan/ARPEGGIO" class="btn" target="_blank">View on GitHub</a>
         </div>
+        <div class="project-card">
+          <h2>SDL Paint</h2>
+          <p>A paint application programmed in C using the SDL2 graphics library.</p>
+          <a href="https://github.com/ramyette/SDL_PAINT" class="btn" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h2>PlinkoBots</h2>
+          <p>A plinko style game made in Godot in which you must clear robot-infested pegs.</p>
+          <span class="btn coming-soon">SOURCE COMING SOON</a>
+        </div>
+      </div>
 
+        <!--
         <div class="project-card locked" data-project="test">
           <h2>Test Project</h2>
           <p>This project contains a Java-based example with source and build artifacts.</p>
@@ -49,31 +63,18 @@
 
           <div class="download-buttons"></div>
         </div>
+        -->
         
-        <div class="project-card locked" data-project="plinkobots">
-          <h2>PlinkoBots</h2>
-          <p>A plinko style game where you must clear all of the robot-infested pegs. <br> <a href="https://www.youtube.com/" target="_blank"><img src="/images/youtube.png" width="14"/> Development video</a></p>
-          <div class="lock-overlay" onclick="openUnlockModal('plinkobots')">
-            <img src="/images/lock.png" class="lock-icon" />
-            <span class="lock-tooltip">Password Protected</span>
-          </div>
 
-          <div class="download-buttons"></div>
-        </div>
 
-        <div class="project-card">
-          <h2>More Coming Soon!</h2>
-          <p>Stay tuned for more projects to be released soon!</p>
-        </div>
-      </div>
-    </section>
-
+    <!-- 
     <div class="global-unlock">
       <p>If you have been given an access key, enter it here:</p>
       <input id="globalKey" type="text" placeholder="Enter access key" />
       <button onclick="unlockAll()">Unlock</button>
       <p id="globalError" class="error"></p>
     </div>
+    -->
   </main>
 
   <footer>
