@@ -1,68 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Changelog | ramyette.dev</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" />
 </head>
+
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
         <a href="/" class="logo-text">
-            <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
+          <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
         </a>
       </div>
-      <ul>
+
+      <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/projects/" class="active">Projects</a></li>
+        <li><a href="/aboutme/">About Me</a></li>
+        <li><a href="/projects/">Projects</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-        <h1>Changelog</h1>
-        <section class="changelog">
-            <ul>
-                <li><strong><time datetime="2025-10-21">10/21/25</time></strong>: 
-                    <ul>
-                        <li>Added favicon (may change soon)</li>
-                        <li>Slightly changed <a href="/">home</a> styling</li>
-                    </ul>
-                </li>
-                <li><strong><time datetime="2025-10-16">10/16/25</time></strong>: 
-                    <ul>
-                        <li>Added changelog</li>
-                        <li>Changed color scheme (it's now my favorite color 🙂)</li>
-                        <li>Fixed incorrect hover colors</li>
-                        <li>Added snow golem variations mod to <a href="/projects/">/projects</a></li>
-                    </ul>
-                </li>
-                <li><strong><time datetime="2025-09-23">09/23/25</time></strong>: 
-                    <ul>
-                        <li>Added arpeggio to <a href="/projects/">/projects</a></li>
-                        <li>Implemented random image logic and added more images to <a href="/">home</a></li>
-                    </ul>
-                </li>
-                <li><strong><time datetime="2025-09-22">09/22/25</time></strong>: 
-                    <ul>
-                        <li>Initial overhaul of website</li>
-                        <li><a href="/">ramyette.dev</a> domain acquired & site published using github pages</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+    <h1>Changelog</h1>
+
+    <section class="changelog">
+      <ul>
+        <div class="major-update">
+        <h2 class="major-update-title">Major Update 2</h2>
+        <li><strong><time datetime="2026-01-12">01/12/26</time></strong>
+          <ul>
+            <li><strong>Complete overhaul of website</strong>
+              <ul>
+                <li>Added refresh button and fixed logic for random profile image</li>
+                <li>Added <a href="/aboutme/">/aboutme</a> and organized info between it and <a href="home">home</a></li>
+                <li>Organized CSS code into sections for readability</li>
+              </ul>
+            </li>
+            <li><strong>Project page update</strong>
+              <ul>
+                <li>Implemented locked project functionality using AWS</li>
+                <li>Used AWS S3 for offsite project file storage</li>
+                <li>Set up AWS Lambda functions to handle HTTP requests from this page</li>
+                <li>Added the new locked PlinkoBots project</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        </div>
+        <li><strong><time datetime="2025-10-21">10/21/25</time></strong>
+          <ul>
+            <li>Added favicon</li>
+            <li>Slightly changed <a href="/home">home</a> styling</li>
+          </ul>
+        </li>
+
+        <li><strong><time datetime="2025-10-16">10/16/25</time></strong>
+          <ul>
+            <li>Added <a href="/changelog/">/changelog</a></li>
+            <li>Changed color scheme (it's now my favorite color 🙂)</li>
+            <li>Fixed incorrect hover colors</li>
+          </ul>
+        </li>
+
+        <li><strong><time datetime="2025-09-23">09/23/25</time></strong>
+          <ul>
+            <li>Added arpeggio to <a href="/projects/">/projects</a></li>
+            <li>Implemented random image logic and added more images to <a href="/home">home</a></li>
+          </ul>
+        </li>
+        <div class="major-update">
+        <h2 class="major-update-title">Major Update 1</h2>
+        <li><strong><time datetime="2025-09-22">09/22/25</time></strong>
+          <ul>
+            <li>Initial overhaul of website</li>
+            <li><a href="https://ramyette.dev/" target="_blank">ramyette.dev</a> domain acquired & site published using github pages</li>
+          </ul>
+        </li>
+        </div>
+      </ul>
+    </section>
   </main>
 
   <footer>
-    <p>Contact: <a href="mailto:rivers.amyette@gmail.com">rivers.amyette@gmail.com</a></p>
+    <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
-    <a href="/changelog/"><strong>Changelog</strong></a>
+    <p><a href="/changelog/"><strong>Changelog</strong></a></p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="/script.js"></script>
 </body>
 </html>

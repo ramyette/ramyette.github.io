@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rivers Amyette's personal website and portfolio.">
-  <meta property="og:title" content="Rivers Amyette - ramyette.dev">
-  <meta property="og:description" content="Rivers Amyette's personal website and portfolio.">
-  <meta property="og:image" content="/images/me1.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rivers Amyette's personal website and portfolio." />
+  <meta property="og:title" content="Rivers Amyette - ramyette.dev" />
+  <meta property="og:description" content="Rivers Amyette's personal website and portfolio." />
+  <meta property="og:image" content="/images/me1.png" />
   <title>Home | ramyette.dev</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
         <a href="/" class="logo-text">
-            <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
+          <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
         </a>
       </div>
-      <ul>
-        <li><a href="/" class="active">Home</a></li>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/aboutme/">About Me</a></li>
         <li><a href="/projects/">Projects</a></li>
       </ul>
     </nav>
@@ -29,31 +31,27 @@
 
   <main class="intro">
     <div class="profile-pic">
-        <img id="randomImage" src="" alt="Rivers picture">
+      <img id="randomImage" src="" alt="Rivers picture">
+      <button id="refreshImageBtn" title="New Image">⟳</button>
     </div>
+
     <h1>I’m Rivers!</h1>
+    <p>I'm a sophomore in the University of South Carolina Honors College studying Computer Science.</p>
+    <p>I made this website as a portfolio to showcase my projects and share a bit about myself.</p>
+    <p>You can learn more about me on the <a href="/aboutme/">/aboutme/</a> page.</p>
     <p>
-     I'm a sophomore in the University of South Carolina Honors College studying Computer Science.
-    </p>
-    <p>
-     I made this website as a portfolio to showcase my projects and share a bit about myself.
-    </p>
-    <p>
-      On my <a href="/projects/">projects page</a>, you will find some of my work. I enjoy coding to solve problems and deepen
-      my knowledge in programming, with some examples being software development, video game modding, and web development.
-      Go check it out!
-    </p>
-    <p>
-      I also enjoy video editing, music production, and gaming in my free time.
+      On my <a href="/projects/">/projects/</a> page, you will find some of my work.
+      I mainly focus on game development, but I post all kinds of projects I've worked on. Go check it out!
     </p>
   </main>
 
   <footer>
-    <p>Contact: <a href="mailto:rivers.amyette@gmail.com">rivers.amyette@gmail.com</a></p>
+    <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
-    <a href="/changelog/"><strong>Changelog</strong></a>
+    <p><a href="/changelog/"><strong>Changelog</strong></a></p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="/script.js"></script>
 </body>
 </html>

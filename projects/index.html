@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | ramyette.dev</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" />
 </head>
+
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
         <a href="/" class="logo-text">
-            <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
+          <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
         </a>
       </div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/projects/" class="active">Projects</a></li>
+        <li><a href="/aboutme/">About Me</a></li>
+        <li><a href="/projects/">Projects</a></li>
       </ul>
     </nav>
   </header>
@@ -26,31 +28,78 @@
   <main>
     <section class="projects">
       <h1>Projects</h1>
+      <p>Some of my projects are locked, which can be accessed on
+        <a href="https://www.patreon.com/ramyette" target="_blank"><img src="/images/patreon.png" width="12" /> Patreon</a>
+      </p>
       <div class="projects-grid">
         <div class="project-card">
-            <h2>Arpeggio</h2>
-            <p>A JavaFX application for composing, playing, and sharing drumset music.</p>
-            <a href="https://github.com/sebastianboscan/ARPEGGIO" target="_blank" class="btn">View on GitHub</a>
+          <h2>Arpeggio</h2>
+          <p>A JavaFX application for composing, playing, and sharing drumset music.</p>
+          <a href="https://github.com/sebastianboscan/ARPEGGIO" class="btn" target="_blank">View on GitHub</a>
         </div>
-        <div class="project-card">
-            <h2>Snow Golem Variations Mod</h2>
-            <p>A Minecraft mod programmed in java that adds new types of snow golems.</p>
-            <span class="btn coming-soon">GITHUB COMING SOON</span>
+
+        <div class="project-card locked" data-project="test">
+          <h2>Test Project</h2>
+          <p>This project contains a Java-based example with source and build artifacts.</p>
+
+          <div class="lock-overlay" onclick="openUnlockModal('test')">
+            <img src="/images/lock.png" class="lock-icon" />
+            <span class="lock-tooltip">Password Protected</span>
+          </div>
+
+          <div class="download-buttons"></div>
         </div>
+        
+        <div class="project-card locked" data-project="plinkobots">
+          <h2>PlinkoBots</h2>
+          <p>A plinko style game where you must clear all of the robot-infested pegs. <br> <a href="https://www.youtube.com/" target="_blank"><img src="/images/youtube.png" width="14"/> Development video</a></p>
+          <div class="lock-overlay" onclick="openUnlockModal('plinkobots')">
+            <img src="/images/lock.png" class="lock-icon" />
+            <span class="lock-tooltip">Password Protected</span>
+          </div>
+
+          <div class="download-buttons"></div>
+        </div>
+
         <div class="project-card">
-            <h2>More Coming Soon!</h2>
-            <p>Stay tuned for more projects to be released here in the coming months!</p>
+          <h2>More Coming Soon!</h2>
+          <p>Stay tuned for more projects to be released soon!</p>
         </div>
       </div>
     </section>
+
+    <div class="global-unlock">
+      <p>If you have been given an access key, enter it here:</p>
+      <input id="globalKey" type="text" placeholder="Enter access key" />
+      <button onclick="unlockAll()">Unlock</button>
+      <p id="globalError" class="error"></p>
+    </div>
   </main>
 
   <footer>
-    <p>Contact: <a href="mailto:rivers.amyette@gmail.com">rivers.amyette@gmail.com</a></p>
+    <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
-    <a href="/changelog/"><strong>Changelog</strong></a>
+    <p><a href="/changelog/"><strong>Changelog</strong></a></p>
   </footer>
-  <script src="script.js"></script>
+
+  <div id="unlockModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <h2>This project is locked</h2>
+      <p>Enter key to unlock downloads:</p>
+      <input id="passwordInput" type="text" placeholder="Enter access key" />
+      <button onclick="submitPassword()">Unlock</button>
+      <p id="modalError" class="error"></p>
+      <p>Or become a 
+        <a href="https://www.patreon.com/ramyette" target="_blank">
+          <img src="/images/patreon.png" width="12" /> Patreon
+        </a>
+        member
+      </p>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
 </body>
 </html>
