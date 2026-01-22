@@ -19,7 +19,7 @@
       </div>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/aboutme/">About Me</a></li>
+        <li><a href="/Blog/">Blog</a></li>
         <li><a href="/projects/">Projects</a></li>
       </ul>
     </nav>
@@ -33,37 +33,37 @@
         <a href="https://www.patreon.com/ramyette" target="_blank"><img src="/images/patreon.png" width="12" /> Patreon</a>
       </p>
       -->
+      <input id="projectSearch" type="text" placeholder="Search projects..." class="project-search"/>
       <div class="projects-grid">
-        <div class="project-card">
+        <a href="/projects/arpeggio/" class="project-card" data-tags="java javafx music application">
           <h2>Arpeggio</h2>
           <p>A JavaFX application for composing, playing, and sharing drumset music.</p>
-          <a href="https://github.com/sebastianboscan/ARPEGGIO" class="btn" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">JavaFX</span>
+            <span class="tag">Music</span>
+            <span class="tag">Application</span>
+          </div>
+        </a>
+        <a href="/projects/sdl-paint/" class="project-card" data-tags="C SDL2 Paint Application">
           <h2>SDL Paint</h2>
           <p>A paint application programmed in C using the SDL2 graphics library.</p>
-          <a href="https://github.com/ramyette/SDL_PAINT" class="btn" target="_blank">View on GitHub</a>
-        </div>
+          <div class="tags">
+            <span class="tag">C</span>
+            <span class="tag">SDL2</span>
+            <span class="tag">Paint</span>
+            <span class="tag">Application</span>
+          </div>
+        </a>
+        <!--
+        change this card to a clickable one eventually
         <div class="project-card">
           <h2>PlinkoBots</h2>
           <p>A plinko style game made in Godot in which you must clear robot-infested pegs.</p>
           <span class="btn coming-soon">SOURCE COMING SOON</a>
         </div>
-      </div>
-
-        <!--
-        <div class="project-card locked" data-project="test">
-          <h2>Test Project</h2>
-          <p>This project contains a Java-based example with source and build artifacts.</p>
-
-          <div class="lock-overlay" onclick="openUnlockModal('test')">
-            <img src="/images/lock.png" class="lock-icon" />
-            <span class="lock-tooltip">Password Protected</span>
-          </div>
-
-          <div class="download-buttons"></div>
-        </div>
         -->
+      </div>
         
 
 
@@ -82,6 +82,12 @@
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
     <p><a href="/changelog/"><strong>Changelog</strong></a></p>
+    <div class="theme-switcher">
+      <select id="themeSelect">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
   </footer>
 
   <div id="unlockModal" class="modal">

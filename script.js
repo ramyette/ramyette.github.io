@@ -14,10 +14,16 @@ document.querySelectorAll('a').forEach(link => {
 
 // highlight active nav link
 document.querySelectorAll(".nav-links a").forEach(a => {
-  if (a.href === window.location.href) {
+  const linkPath = new URL(a.href).pathname;
+  const currentPath = window.location.pathname;
+  if (
+    currentPath === linkPath ||
+    (linkPath !== "/" && currentPath.startsWith(linkPath))
+  ) {
     a.classList.add("active");
   }
 });
+
 
 // random profile image logic
 const imgEl = document.getElementById("randomImage");
@@ -42,97 +48,160 @@ setRandomImage(); // initial load
 
 refreshBtn?.addEventListener("click", setRandomImage);
 
-// project unlocking logic (using AWS Lambda)
-let currentProject = null;
-const API_URL = "https://g11n14cja2.execute-api.us-east-1.amazonaws.com/unlock";
-
-function openUnlockModal(project) {
-  currentProject = project;
-  document.getElementById("passwordInput").value = "";
-  document.getElementById("modalError").textContent = "";
-  document.getElementById("unlockModal").classList.add("visible");
-}
-
-function closeModal() {
-  document.getElementById("unlockModal").classList.remove("visible");
-}
-
-async function submitPassword() {
-  const key = document.getElementById("passwordInput").value;
-
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ key })
+// format date helper (for blog posts)
+function formatLocalDate(isoDate) {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
   });
-
-  const data = await res.json();
-
-  if (!res.ok || !data.projectsUnlocked.includes(currentProject)) {
-    flashError("modalError", "Incorrect password");
-    return;
-  }
-
-  unlockProjectUI(currentProject, data.files);
-  closeModal();
 }
 
-function unlockProjectUI(name, files) {
-  const card = document.querySelector(`.project-card[data-project="${name}"]`);
-  const lock = card.querySelector(".lock-overlay");
-  const buttons = card.querySelector(".download-buttons");
+// build the preview text for blog post previews
+function buildPreviewText(article, maxLength = 120) {
+  let text = "";
 
-  lock.classList.add("fade-out");
-  setTimeout(() => (lock.style.display = "none"), 400);
+  const paragraphs = article.querySelectorAll("p");
 
-  buttons.innerHTML = files
-    .map(f => `<a class="btn" href="${f.url}" download>${f.file.includes("source") ? "Download Source" : "Download Build"}</a>`)
-    .join("");
+  for (const p of paragraphs) {
+    const chunk = p.textContent.trim();
 
-  buttons.classList.add("fade-in");
-}
+    if (!chunk) continue;
 
-async function unlockAll() {
-  const key = document.getElementById("globalKey").value;
-
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ key })
-  });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    flashError("globalError", "Incorrect key");
-    return;
-  }
-
-  document.querySelectorAll(".project-card.locked").forEach(card => {
-    let project = card.dataset.project;
-
-    if (data.projectsUnlocked.includes(project)) {
-      unlockProjectUI(project, data.files);
+    if (text.length + chunk.length <= maxLength) {
+      text += (text ? " " : "") + chunk;
+    } else {
+      const remaining = maxLength - text.length;
+      text += (text ? " " : "") + chunk.slice(0, remaining);
+      break;
     }
-  });
+  }
+
+  return text.length < maxLength ? text : text + "...";
 }
 
-// enter key handling
-document.addEventListener("keydown", e => {
-  if (e.key === "Enter" && document.getElementById("unlockModal").classList.contains("visible")) {
-    submitPassword();
+// blog sort
+const sort = document.getElementById("blogSort");
+
+sort?.addEventListener("change", e => {
+  const cards = [...document.querySelectorAll(".blog-card")];
+  const newest = e.target.value === "newest";
+
+  cards.sort((a, b) =>
+    newest
+      ? new Date(b.dataset.date) - new Date(a.dataset.date)
+      : new Date(a.dataset.date) - new Date(b.dataset.date)
+  );
+
+  cards.forEach(c => c.parentNode.appendChild(c));
+});
+
+// blog modal
+async function loadBlogCards() {
+  const cards = document.querySelectorAll(".blog-card");
+
+  for (const card of cards) {
+    const post = card.dataset.post;
+
+    const res = await fetch(`/blog/posts/${post}.html`);
+    const html = await res.text();
+
+    const temp = document.createElement("div");
+    temp.innerHTML = html;
+
+    const article = temp.querySelector("article");
+    if (!article) continue;
+
+    const title = article.dataset.title;
+    const date = article.dataset.date;
+    const preview = buildPreviewText(article, 120);
+
+    card.dataset.date = date;
+
+    card.innerHTML = `
+      <h2>${title}</h2>
+      <p class="blog-date">${formatLocalDate(date)}</p>
+      <p>${preview}</p>
+    `;
+  }
+}
+
+loadBlogCards();
+
+const modal = document.getElementById("blogModal");
+const content = document.getElementById("blogContent");
+
+document.querySelectorAll(".blog-card").forEach(card => {
+  card.addEventListener("click", async () => {
+    const post = card.dataset.post;
+
+    const res = await fetch(`/blog/posts/${post}.html`);
+    const html = await res.text();
+
+    const temp = document.createElement("div");
+    temp.innerHTML = html;
+
+    const article = temp.querySelector("article");
+    if (!article) return;
+
+    const title = article.dataset.title;
+    const date = article.dataset.date;
+
+    document.getElementById("blogModalTitle").textContent = title;
+    document.getElementById("blogModalDate").textContent =
+      formatLocalDate(date);
+
+    document.getElementById("blogContent").innerHTML =
+      article.innerHTML;
+
+    document.getElementById("blogModal").classList.add("visible");
+  });
+});
+
+function closeBlog() {
+  modal.classList.remove("visible");
+}
+
+// project search
+const search = document.getElementById("projectSearch");
+
+search?.addEventListener("input", e => {
+  const q = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".project-card").forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const tags = card.dataset.tags || "";
+
+    card.style.display =
+      text.includes(q) || tags.includes(q) ? "" : "none";
+  });
+});
+
+const blogModal = document.getElementById("blogModal");
+
+blogModal?.addEventListener("click", e => {
+  // if you clicked the backdrop (not the modal itself)
+  if (e.target === blogModal) {
+    closeBlog();
   }
 });
 
-document.getElementById("globalKey")?.addEventListener("keydown", e => {
-  if (e.key === "Enter") unlockAll();
-});
+// Theme switching
+const themeSelect = document.getElementById("themeSelect");
 
-// error text
-function flashError(id, message, time = 5000) {
-  const el = document.getElementById(id);
-  el.textContent = message;
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+}
 
-  if (el._timeout) clearTimeout(el._timeout);
-  el._timeout = setTimeout(() => (el.textContent = ""), time);
+const savedTheme = localStorage.getItem("theme") || "light";
+applyTheme(savedTheme);
+
+if (themeSelect) {
+  themeSelect.value = savedTheme;
+
+  themeSelect.addEventListener("change", e => {
+    applyTheme(e.target.value);
+  });
 }

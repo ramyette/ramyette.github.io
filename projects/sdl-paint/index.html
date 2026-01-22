@@ -29,45 +29,37 @@
     </nav>
   </header>
 
-  <main class="intro">
-    <h1>ramyette</h1>
-    <h3>(Rivers Amyette)</h3>
-    <div class="profile-pic">
-      <img id="randomImage" src="" alt="Rivers picture">
-      <button id="refreshImageBtn" title="New Image">⟳</button>
-    </div>
-    <h2>About me</h2>
-    <li>
-      <p>Sophomore at the University of South Carolina honors college studying computer science</p>
-    </li>
-    <li>
-      <p>From Greenville, SC</p>
-    </li>
-    <li>
-      <p>Part of the Carolina Band drumline</p>
-    </li>
-    <h2>Skills</h2>
-    <li>
-      <p><strong>Languages:</strong> Java, C, GDScript</p>
-    </li>
-    <li>
-      <p><strong>Graphics Engines & Libraries:</strong> SDL2, Godot</p>
-    </li>
-    <h2>Other</h2>
-    <li>
-      <p><strong>Video & Image Editing:</strong> Adobe Premiere Pro, After Effects, Photoshop, Illustrator</p>
-    </li>
-    <li>
-      <p><strong>Music Composition:</strong> FL Studio</p>
-    </li>
-    <h2>Fun Fact of the Day</h2>
-    <p>   The hardest level I've beaten in Geometry Dash is Bloodbath</p>
-    <div class="home-links">
-      <a href="/projects/" class="btn">View Projects</a>
-      <a href="/blog/" class="btn secondary">Read Blog</a>
+  <main class="project-page no-media">
+    <a href="/projects/" class="back-link">← Back to Projects</a>
+    <h1>SDL Paint</h1>
+    <div class="project-content">
+      <div class="project-description">
+        <p>
+          SDL Paint is a paint application programmed in C using the SDL2 graphics library.
+          Using left click, you can paint onto the screen in your chosen color.
+          It features intuitive controls, like scrolling to change brush size and right
+          click to change color.
+        </p>
+        <p>
+          This was my first project using SDL2 and it was mainly a test to see if I could
+          implement basic features like drawing circles, which is something SDL does not
+          come built-in with. 
+        </p>
+        <p>
+          <strong>This is an active project.</strong> As of right now, there is no erase or undo,
+          so paint is drawn permanently to the canvas until the program is closed.
+          I plan on adding those features, along with more tools and a UI for tool / color switching.
+        </p>
+        <a href="https://github.com/ramyette/SDL_PAINT" target="_blank" class="btn">View Github</a>
+      </div>
+      <!--
+      <div class="project-media">
+        <img src="/images/sdl-paint-demo.gif" alt="SDL Paint demo">
+      </div>
+      -->
     </div>
   </main>
-
+  
   <footer>
     <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>

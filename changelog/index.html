@@ -20,7 +20,7 @@
 
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/aboutme/">About Me</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="/projects/">Projects</a></li>
       </ul>
     </nav>
@@ -31,36 +31,74 @@
 
     <section class="changelog">
       <ul>
-        <div class="major-update">
-        <h2 class="major-update-title">Major Update 2</h2>
-        <li><strong><time datetime="2026-01-12">01/12/26</time></strong>
+
+        <!-- Major Update 2: Episode One -->
+        <li class="major-update">
+          <h2 class="major-update-title">Major Update 2: Episode One</h2>
+          <strong><time datetime="2026-01-22">01/22/26</time></strong>
+
           <ul>
-            <li><strong>Complete overhaul of website</strong>
+            <li><strong>ANOTHER Website Overhaul</strong>
               <ul>
-                <li>Added refresh button and fixed logic for random profile image</li>
-                <li>Added <a href="/aboutme/">/aboutme</a> and organized info between it and <a href="home">home</a></li>
-                <li>Organized CSS code into sections for readability</li>
+                <li>Removed <a href="">/aboutme</a> and returned to displaying that info on home page, but more concise.</li>
+                <li>Added dark theme and theme switcher</li>
+                <li>Added fun fact of the day (may be temporary)</li>
               </ul>
             </li>
-            <li><strong>Project page update</strong>
+
+            <li><strong>Blog Page</strong>
               <ul>
-                <li>Added SDL Paint project</li>
-                <li>Implemented locked project functionality using AWS (no locked projcets added yet)</li>
-                <li>Used AWS S3 for offsite project file storage</li>
-                <li>Set up AWS Lambda functions to handle HTTP requests from this page</li>
+                <li>Added <a href="/blog/">/blog</a></li>
+                <li>Added sorting feature based on post date</li>
+              </ul>
+            </li>
+
+            <li><strong>Project page update 2</strong>
+              <ul>
+                <li>Changed how projects are styled</li>
+                <li>Added individual project pages to show deeper explanation & demo</li>
+                <li>Added tags and a search feature to easily find a certain project</li>
               </ul>
             </li>
           </ul>
         </li>
-        </div>
-        <li><strong><time datetime="2025-10-21">10/21/25</time></strong>
+
+        <!-- Major Update 2 -->
+        <li class="major-update">
+          <h2 class="major-update-title">Major Update 2</h2>
+          <strong><time datetime="2026-01-12">01/12/26</time></strong>
+
+          <ul>
+            <li><strong>Complete overhaul of website</strong>
+              <ul>
+                <li>Added refresh button and fixed logic for random profile image</li>
+                <li>Added <a href="">/aboutme</a> and organized info between it and <a href="/home">home</a></li>
+                <li>Organized CSS code into sections</li>
+              </ul>
+            </li>
+
+            <li><strong>Project page update</strong>
+              <ul>
+                <li>Added SDL Paint project</li>
+                <li>Implemented locked project functionality using AWS (no locked projects added yet)</li>
+                <li>Used AWS S3 for offsite project file storage</li>
+                <li>Set up AWS Lambda functions to handle HTTP requests</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Small Updates -->
+        <li>
+          <strong><time datetime="2025-10-21">10/21/25</time></strong>
           <ul>
             <li>Added favicon</li>
             <li>Slightly changed <a href="/home">home</a> styling</li>
           </ul>
         </li>
 
-        <li><strong><time datetime="2025-10-16">10/16/25</time></strong>
+        <li>
+          <strong><time datetime="2025-10-16">10/16/25</time></strong>
           <ul>
             <li>Added <a href="/changelog/">/changelog</a></li>
             <li>Changed color scheme (it's now my favorite color 🙂)</li>
@@ -68,21 +106,30 @@
           </ul>
         </li>
 
-        <li><strong><time datetime="2025-09-23">09/23/25</time></strong>
+        <li>
+          <strong><time datetime="2025-09-23">09/23/25</time></strong>
           <ul>
             <li>Added arpeggio to <a href="/projects/">/projects</a></li>
             <li>Implemented random image logic and added more images to <a href="/home">home</a></li>
           </ul>
         </li>
-        <div class="major-update">
-        <h2 class="major-update-title">Major Update 1</h2>
-        <li><strong><time datetime="2025-09-22">09/22/25</time></strong>
+
+        <!-- Major Update 1 -->
+        <li class="major-update">
+          <h2 class="major-update-title">Major Update 1</h2>
+          <strong><time datetime="2025-09-22">09/22/25</time></strong>
+
           <ul>
             <li>Initial overhaul of website</li>
-            <li><a href="https://ramyette.dev/" target="_blank">ramyette.dev</a> domain acquired & site published using github pages</li>
+            <li>
+              <a href="https://ramyette.dev/" target="_blank">
+                ramyette.dev
+              </a>
+              domain acquired & site published using GitHub Pages
+            </li>
           </ul>
         </li>
-        </div>
+
       </ul>
     </section>
   </main>
@@ -92,6 +139,13 @@
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
     <p><a href="/changelog/"><strong>Changelog</strong></a></p>
+
+    <div class="theme-switcher">
+      <select id="themeSelect">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
   </footer>
 
   <script src="/script.js"></script>

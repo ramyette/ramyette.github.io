@@ -29,45 +29,38 @@
     </nav>
   </header>
 
-  <main class="intro">
-    <h1>ramyette</h1>
-    <h3>(Rivers Amyette)</h3>
-    <div class="profile-pic">
-      <img id="randomImage" src="" alt="Rivers picture">
-      <button id="refreshImageBtn" title="New Image">⟳</button>
-    </div>
-    <h2>About me</h2>
-    <li>
-      <p>Sophomore at the University of South Carolina honors college studying computer science</p>
-    </li>
-    <li>
-      <p>From Greenville, SC</p>
-    </li>
-    <li>
-      <p>Part of the Carolina Band drumline</p>
-    </li>
-    <h2>Skills</h2>
-    <li>
-      <p><strong>Languages:</strong> Java, C, GDScript</p>
-    </li>
-    <li>
-      <p><strong>Graphics Engines & Libraries:</strong> SDL2, Godot</p>
-    </li>
-    <h2>Other</h2>
-    <li>
-      <p><strong>Video & Image Editing:</strong> Adobe Premiere Pro, After Effects, Photoshop, Illustrator</p>
-    </li>
-    <li>
-      <p><strong>Music Composition:</strong> FL Studio</p>
-    </li>
-    <h2>Fun Fact of the Day</h2>
-    <p>   The hardest level I've beaten in Geometry Dash is Bloodbath</p>
-    <div class="home-links">
-      <a href="/projects/" class="btn">View Projects</a>
-      <a href="/blog/" class="btn secondary">Read Blog</a>
+  <main class="project-page no-media">
+    <a href="/projects/" class="back-link">← Back to Projects</a>
+    <h1>Arpeggio</h1>
+    <div class="project-content">
+      <div class="project-description">
+        <p>
+          Arpeggio is a JavaFX application for composing, playing, and sharing drumset music.
+          It includes an account system featuring a profile picture, obfuscated password, and 2fa,
+          along with the writing and playing drumset music, and a flashcard system to learn terms
+          related to drumming.
+        </p>
+        <p>
+          This was a project for a software engineering class in which each member of my group
+          took a role to simulate a software engineering environment.
+        </p>
+        <p>
+          My major contribution was programming the audio playback, which reads a JSON file
+          of notes for a song. The audio playback runs in a separate thread from the main app loop
+          and uses the set BPM and System.nanotime to calculate how long to wait between notes, and
+          then either plays a note or rests depending on what it reads from the JSON.
+        </p>
+        <a href="https://youtu.be/43tU75kc64g" target="_blank" class="btn">Watch Demo</a>
+        <a href="https://github.com/sebastianboscan/ARPEGGIO" target="_blank" class="btn">View Github</a>
+      </div>
+      <!--
+      <div class="project-media">
+        <img src="/images/arpeggio-demo.gif" alt="Arpeggio demo">
+      </div>
+      -->
     </div>
   </main>
-
+  
   <footer>
     <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
     <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>

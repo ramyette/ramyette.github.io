@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | ramyette.dev</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/" class="logo-text">
+          <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/projects/">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Blog</h1>
+    <div class="blog-controls">
+      <select id="blogSort">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
+
+    <section class="blog-list" id="blogList">
+      <div class="blog-card" data-post="post-1"></div>
+    </section>
+    <!-- modal -->
+    <div id="blogModal" class="modal">
+      <div class="modal-content blog-modal">
+        <span class="close-btn" onclick="closeBlog()">×</span>
+
+        <div class="blog-modal-header">
+          <h2 id="blogModalTitle" class="blog-modal-title"></h2>
+          <p id="blogModalDate" class="blog-date"></p>
+        </div>
+
+        <div class="blog-modal-body" id="blogContent"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
+    <p><a href="/changelog/"><strong>Changelog</strong></a></p>
+    <div class="theme-switcher">
+      <select id="themeSelect">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
