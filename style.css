@@ -216,6 +216,7 @@ main p {
   .intro h1 { font-size: 1.8rem; }
   .intro p { font-size: 1rem; }
   .blog-modal { max-width: 95%; max-height: 90vh; }
+  .projects-grid {  }
 }
 
 @media (max-width: 480px) {
