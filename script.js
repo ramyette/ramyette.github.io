@@ -167,24 +167,31 @@ function closeBlog() {
 const search = document.getElementById("projectSearch");
 
 search?.addEventListener("input", e => {
-  const q = e.target.value.toLowerCase();
+  const query = e.target.value.trim().toLowerCase();
 
   document.querySelectorAll(".project-card").forEach(card => {
-    const text = card.textContent.toLowerCase();
-    const tags = card.dataset.tags || "";
+    const titleText = card.querySelector("h2")?.textContent.toLowerCase() || "";
+    const tagString = card.dataset.tags || "";
+    const tags = tagString.toLowerCase().split(/\s+/);
 
-    card.style.display =
-      text.includes(q) || tags.includes(q) ? "" : "none";
+    let matches = false;
+
+    if (!query) {
+      matches = true;
+    }
+
+    else if (tags.includes(query)) {
+      matches = true;
+    }
+    
+    else if (query.length > 1) {
+      matches =
+        titleText.includes(query) ||
+        tagString.toLowerCase().includes(query);
+    }
+
+    card.style.display = matches ? "" : "none";
   });
-});
-
-const blogModal = document.getElementById("blogModal");
-
-blogModal?.addEventListener("click", e => {
-  // if you clicked the backdrop (not the modal itself)
-  if (e.target === blogModal) {
-    closeBlog();
-  }
 });
 
 // Theme switching

@@ -216,7 +216,6 @@ main p {
   .intro h1 { font-size: 1.8rem; }
   .intro p { font-size: 1rem; }
   .blog-modal { max-width: 95%; max-height: 90vh; }
-  .projects-grid {  }
 }
 
 @media (max-width: 480px) {
@@ -294,6 +293,14 @@ main p {
   margin-bottom: 0.2rem;
 }
 
+.blog-modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
 .spacer {
   margin-top: 1.5rem;
 }
@@ -347,6 +354,11 @@ main p {
 .project-page.no-media .project-description {
   max-width: 700px;
   text-align: center;
+}
+
+.project-page.no-media .project-description .btn {
+  align-self: center;
+  margin-top: 1rem;
 }
 
 .project-page.no-media .project-description p {
@@ -425,7 +437,6 @@ main p {
   font-size: 0.75rem;
 }
 
-/* project buttons */
 .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
@@ -441,12 +452,6 @@ main p {
   transform: translateY(-2px);
 }
 
-.coming-soon {
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-/* project detail pages */
 .project-page h1 {
   margin-bottom: 2rem;
   text-align: center;
@@ -461,12 +466,60 @@ main p {
 
 .project-description p {
   margin-bottom: 1rem;
+  text-align: right;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-description .btn {
+  align-self: flex-end;
+  margin-top: 1rem;
 }
 
 .project-media img {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 6px 20px var(--shadow);
+}
+
+/* mobile project page adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .project-description {
+    max-width: 700px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .project-description p {
+    text-align: center;
+  }
+
+  .project-media {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-media img {
+    max-width: 100%;
+  }
+
+  .project-description .btn {
+    align-self: center;
+  }
 }
 
 /* modal */

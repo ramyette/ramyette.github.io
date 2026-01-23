@@ -1,6 +1,5 @@
-<article data-title="Experimenting with low-level graphics" data-date="2026-01-22">
+<article data-title="Experimenting with low-level graphics" data-date="2026-01-23">
 
-<!-- content -->
 <p>
   Lately, I've spent a lot of time working with a low-level graphics library called SDL2. I was mainly inspired
   by a YouTuber by the name of <a href="https://www.youtube.com/@HirschDaniel" target="_blank">Daniel Hirsch</a>.
@@ -11,12 +10,33 @@
 <p>
   The graphics library doesn't even have a function for drawing circles. This means that functions such as those
   have to be made by hand. In my paint project, I had a circular brush, and in order to do that, I made a FillCircle
-  function that would 
+  function that would do this for me:
 </p>
-
-<!-- image -->
-<img src="/images/example.gif" alt="Demo">
-
+<p class="spacer"></p>
+<img src="/images/post-2.png" alt="FillCircle function">
+<p class="spacer"></p>
+<p>
+  It takes in an SDL_Surface, which is basically just the canvas you're drawing to, a circle struct (which I defined
+  earlier in the program, it just has x, y, and radius values), and a hex color. I created a rectangle of size {1, 1} that
+  fills in a single pixel, and if the pixel is calculated to be inside of the circle, it's filled in.
+</p>
+<p class="spacer"></p>
+<p>
+  With the help of Stack Overflow, I'm seriously making progress on learning SDL2! If you're interested in low-level
+  graphics but don't know where to start, I'd definitely say get into SDL. It's honestly super intuitive and they
+  have plenty of examples and docs <a href="https://wiki.libsdl.org/SDL2/Tutorials" target="_blank">here</a>.
+</p>
+<p class="spacer"></p>
+<p>
+  After working on my SDL Paint app, I started to work on a particle simulation. It's currently in the works and will
+  be on <a href="/projects/">/projects</a> in the next few days, but it's been a struggle to figure out the right math to
+  make them interact like gas particles.
+</p>
+<p class="spacer"></p>
+<p>
+  All of this to say, if you ever look at something and thing it's too complicated to understand, just sit down,
+  find some documentation, and start! Once you get going, it just keeps flowing (at least for me).
+</p>
 <p class="spacer"></p>
 <p>
   -ramyette
