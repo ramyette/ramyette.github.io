@@ -301,6 +301,12 @@ main p {
   border-radius: 12px;
 }
 
+.blog-modal-body a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .spacer {
   margin-top: 1.5rem;
 }
