@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDL Particle Simulator | ramyette.dev</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/" class="logo-text">
+          <span>r</span><span>a</span><span>m</span><span>y</span><span>e</span><span>t</span><span>t</span><span>e</span><span>.</span><span>d</span><span>e</span><span>v</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/projects/">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <a href="/projects/" class="back-link">← Back to Projects</a>
+    <h1>SDL Particle Simulator</h1>
+    <div class="project-content">
+      <div class="project-description">
+        <p>
+          SDL Particle Simulator is a C application that uses the SDL2 library, similar to
+          my SDL paint project. This is a very simple "particle simulator", in which the user
+          can click and drag to impact the movement of the particles. However, as of right now,
+          the particles do not interact with each other, so I consider it more of a "particle sandbox".
+        </p>
+        <p>
+          This project has very simple controls. Click and hold left click to drag, and that is all!
+        </p>
+        <p>
+          <strong>This is an active project.</strong> There are lots of features in the works!
+          This project is extremely simple at the moment. I want to add particle interactions,
+          settings like particle count and color, changing the radius of impact of your mouse,
+          and much more.
+        </p>
+        <a href="/games/particle-sandbox/" target="_blank" class="btn">Play Demo</a>
+        <a href="https://github.com/ramyette/SDL_Particle_Simulator" target="_blank" class="btn">View Github</a>
+      </div>
+      <div class="project-media">
+        <img src="/images/sdl-particle-simulator-demo.gif" alt="SDL Particle Simulator demo">
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>Contact: <a href="mailto:ramyette.dev@gmail.com">ramyette.dev@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/ramyette" target="_blank">@ramyette</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ramyette" target="_blank">linkedin.com/in/ramyette</a></p>
+    <p><a href="/changelog/"><strong>Changelog</strong></a></p>
+    <div class="theme-switcher">
+      <select id="themeSelect">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

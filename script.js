@@ -194,12 +194,6 @@ search?.addEventListener("input", e => {
   });
 });
 
-modal.addEventListener("click", e => {
-  if (e.target === modal) {
-    closeBlog();
-  }
-});
-
 // Theme switching
 const themeSelect = document.getElementById("themeSelect");
 
