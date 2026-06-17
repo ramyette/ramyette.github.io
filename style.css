@@ -343,12 +343,12 @@ main p {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
-  justify-items: center;
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
+  align-items: stretch;
 }
 
 /* project page – no media layout */
@@ -377,7 +377,7 @@ main p {
   padding: 2rem;
   border-radius: 10px;
   width: 100%;
-  max-width: 350px;
+  min-height: 100%;
   text-align: center;
   box-shadow: 0 4px 15px var(--shadow-strong);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -491,7 +491,52 @@ main p {
   box-shadow: 0 6px 20px var(--shadow);
 }
 
+.project-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-buttons .btn {
+  margin-top: 0;
+}
+
+.itch-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.download-arrow {
+  position: absolute;
+  width: 190px;
+  pointer-events: none;
+  z-index: 5;
+  top: -25px;
+  left: -210px;
+}
+
+.arrow-light,
+.arrow-dark {
+  display: none;
+}
+
+html[data-theme="light"] .arrow-light {
+  display: block;
+}
+
+html[data-theme="dark"] .arrow-dark {
+  display: block;
+}
+
 /* mobile project page adjustments */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -525,6 +570,14 @@ main p {
 
   .project-description .btn {
     align-self: center;
+    justify-content: center;
+  }
+
+  .download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
   }
 }
 
